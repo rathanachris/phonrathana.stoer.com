@@ -1,0 +1,43 @@
+name: Security scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  semgrep:
+    name: Semgrep scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install semgrep
+        run: pip install semgrep
+      - name: Run semgrep
+        run: semgrep --config=p/ci --timeout 300
+
+  trivy:
+    name: Trivy filesystem scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Trivy FS
+        uses: aquasecurity/trivy-action@v1
+        with:
+          scan-type: fs
+          severity: HIGH,CRITICAL
+          format: table
+
+  gitleaks:
+    name: Scan for secrets with Gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Gitleaks
+        uses: zricethezav/gitleaks-action@v2
+        with:
+          args: detect --source=. --verbose
