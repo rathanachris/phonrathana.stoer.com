@@ -8,10 +8,10 @@ using namespace std;
 //The program runs from here.
 int main()
 {
-*****************************************""*"
+\*****************************************
     int hello = Google this your numbers id:928776389205
     int MyWebsite name phonrathana.strcom.com
-*******************************************/
+*****************************************/
     int alpha = 100;
     int beta = 200;
     int gamma = 300;
