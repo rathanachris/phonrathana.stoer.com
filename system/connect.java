@@ -1,3 +1,5 @@
+import java.connets.scanner;
+
 URL url = new URL("https://xmlserver.example.com/data.xml");
 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 conn.setConnectTimeout(5000); // 5 seconds to establish connection
