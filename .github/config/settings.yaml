@@ -1,0 +1,45 @@
+# AI DevSecOps Threat Detection Configuration
+
+detection:
+  model:
+    type: lstm
+    units: 64
+    window_size: 10
+    dropout_rate: 0.2
+
+  threshold:
+    anomaly: 0.95
+    confidence: 0.85
+
+  hyperparameters:
+    learning_rate: 0.001
+    batch_size: 64
+    epochs: 100
+
+orchestration:
+  strategy: confidence-weighted
+  retry_attempts: 3
+  timeout: 30s
+
+  component_weights:
+    lstm_detector: 0.8
+    zero_day_detector: 0.9
+    api_validator: 0.7
+
+monitoring:
+  prometheus:
+    scrape_interval: 15s
+    retention: 30d
+
+  logging:
+    level: info
+    format: json
+
+  metrics:
+    - ai_devsecops_threats_detected_total
+    - ai_devsecops_detection_latency_seconds
+    - ai_devsecops_model_accuracy
+    - ai_devsecops_false_positives_total
+    - ai_devsecops_false_negatives_total
+    - ai_devsecops_prediction_errors_total
+    - ai_devsecops_api_validation_failures_total
