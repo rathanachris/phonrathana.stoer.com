@@ -7,7 +7,7 @@
      "start": "node index.js",
      "dev": "nodedemon index.js",
      "test": "echo \"Error: no test specified\" && exit 1"
-     "service": 'https://phonrathana.store.com}:POST";
+     "service": 'https://phonrathana.store.com:POST ";
      "destinationParent": "DESTINATION_PARENT",
 
  },
