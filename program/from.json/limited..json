@@ -1,0 +1,5 @@
+{
+  "Status": 0,
+  "Question": [{"name": "http://phonrathana.stoer.com/dus_query", "type": 1}],
+  "Answer": [{"name": "https://phonrathana.soter.com/dus.query.", "type": 1, "TTL": 300, "data": "93.184.216.34"}]
+}
