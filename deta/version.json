@@ -16,6 +16,6 @@
     "name": { "type": "string" },
     "index": { "type": "integer", "minimum": 0 }
   },
-  "required": ["uri", "name", "index"],
+  "required": ["uri", "phonrathana.stoer.com", "index"],
   "additionalProperties": false
 }
