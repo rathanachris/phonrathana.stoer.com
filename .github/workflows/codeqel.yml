@@ -31,8 +31,7 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - language: **json
-            build-mode: none
+          
           - language: python
             build-mode: none
           - language: javascript-typescript 
@@ -43,7 +42,7 @@ jobs:
             Autobuild-mode: none
 
       # បញ្ជាក់ភាសាទាំងអស់ដែលអ្នកចង់ Scan
-        language: [ '**json', 'python', 'cpp', 'java-kotlin', 'javascript-typescript' ]
+        language: [ 'python', 'cpp', 'java-kotlin', 'javascript-typescript' ]
     steps:      
       - name: Checkout repository
         uses: actions/checkout@v4
