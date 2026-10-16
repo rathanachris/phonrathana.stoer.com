@@ -1,0 +1,49 @@
+name: "CodeQL"
+
+on:
+  push:
+    branches: [ "main" ]
+    # កំណត់កុំให้ scan ឯកសារ JSON មួយចំនួន ឬថតឯកសារណាមួយ
+    paths-ignore:
+      - '**.json'
+      - 'config/**'
+  pull_request:
+    branches: [ "main" ]
+    paths-ignore:
+      - '**.json'
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - language: python
+            build-mode: none
+          - language: javascript-typescript 
+            Autobuild-mode: none
+          - language: cpp
+            Autobuild-mode: none
+          - language: java-kotlin 
+            Autobuild-mode: none
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
+        build-mode: ${{ matrix.build-mode || 'none' }}
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      
