@@ -1,0 +1,15 @@
+{
+  "server": {
+    "protocol": "https",
+    "domain": "example.com",
+    "host": "localhost",
+    "port": 443,
+    "openssl": {
+      "keyPath": "./cert/private.key",
+      "certPath": "./cert/certificate.crt"
+    }
+  },
+  "cors": {
+    "allowedOrigins": ["http://localhost:3000"]
+  }
+}
