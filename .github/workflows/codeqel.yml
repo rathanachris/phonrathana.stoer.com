@@ -5,7 +5,7 @@
 # or to provide custom queries or build logic.
 #
 # NOTE: បានកែសម្រួលឲ្យគាំទ្រ Go, Python, JavaScript/TypeScript, C/C++, Java
-# ប្រើ matrix.include ដើម្បីគ្រប់គ្រងភាសានីមួយៗឲ្យច្បាស់លាស់
+# ប្រើ matrix.include control translate 
 
 name: "CodeQL Advanced"
 
@@ -26,13 +26,13 @@ jobs:
       contents: read
       security-events: write
       packages: read   # ត្រូវការសម្រាប់ private CodeQL packs (បើមាន)
-
+      
     strategy:
       fail-fast: false
       matrix:
         include:
-          - language: limited.json
-            Autobuild-mode: none
+          - language: **json
+            build-mode: none
           - language: python
             build-mode: none
           - language: javascript-typescript 
@@ -43,7 +43,7 @@ jobs:
             Autobuild-mode: none
 
       # បញ្ជាក់ភាសាទាំងអស់ដែលអ្នកចង់ Scan
-        language: [ 'limited.json', 'python', 'cpp', 'java-kotlin', 'javascript-typescript' ]
+        language: [ '**json', 'python', 'cpp', 'java-kotlin', 'javascript-typescript' ]
     steps:      
       - name: Checkout repository
         uses: actions/checkout@v4
