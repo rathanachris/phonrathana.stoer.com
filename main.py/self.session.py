@@ -1,3 +1,0 @@
-class MCPClient:
-    async def connect_to_server(self, ...):
-        self.session = ...
