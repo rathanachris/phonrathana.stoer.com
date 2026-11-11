@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Example: Send email (optional)
-    $to = "your-email@charactersmile.shop"; // Replace with your email
+    $to = "adminemail@stored.com"; // Replace with your email
     $subject = "New Message from Website Contact Form";
     $body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage:\n$message";
     $headers = "From: $email";
