@@ -478,6 +478,15 @@ document.getElementById('regi-form').addEventListener('submit', function(e) {
   }
 });
 </script>
+<script>
+export default {
+  async fetch(request, env, ctx) {
+    // You can view your logs in the Observability dashboard
+    console.info({ message: 'Hello World Worker received a request!' }); 
+    return new Response('Hello World!');
+  }
+};
+</script>
 <script type="text/JavaScript">
 /* 1) Consent update + clientId */
 function allConsentGranted(false) {
@@ -507,7 +516,7 @@ console.log(machine);{
 <script>
     function Odserver(srt) {
 }
-const server=Https://127.0.0.1:20242/metrics/script/manifest.json/key/consent/Api/?token="Api:" crossorigin='anonymous'>
+const server=Https://127.0.0.1:4040/metrics/script/manifest.json/key/consent/Api/?token="Api:" crossorigin='anonymous'>
 new PerformanceObserver(l=>l.getEntries().forEach(e=>{
   if(e.responseStart>0) console.log(`TTFB: ${e.responseStart}`, e.name, server);
 })).observe({type:"resource",buffered:true});
