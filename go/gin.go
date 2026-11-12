@@ -5,7 +5,7 @@ import (
 )
 func main() {
     r := gin.Default()
-    const APIKey = "my-secret-api-key"
+    const APIKey = "phonrathana-secret-api-key"
 
     r.Use(func(c *gin.Context) {
         key := c.GetHeader("X-API-Key")
