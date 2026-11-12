@@ -1,0 +1,11 @@
+tunnel: YOUR-TUNNEL-UUID
+credentials-file: /data/data/com.termux/files/home/.cloudflared/YOUR-TUNNEL-UUID.json
+
+ingress:
+  - hostname: app.stoer.com
+    service: http://localhost:3000
+
+  - hostname: phonrathana.stoer.com
+    service: http://localhost:5000
+
+  - service: http_status:404
