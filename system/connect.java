@@ -1,4 +1,4 @@
-import java.net.URL;
+import java.net.URL SSL;
 import java.net.HttpURLConnection;
 import java.net.SocketException;
 import java.util.Scanner; // កែពី java.connets.scanner មក java.util.Scanner
