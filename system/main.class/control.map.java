@@ -4,7 +4,7 @@ public java static void mainclass (string[st] args){
 	/* code */
 }
 class useService {
-public String getUserEmail (user user); {
+public String getUserEmail (user: phonrathana-secret-api-key); {
 return Optional.ofNullable(user)
         .map(User::getProfile)
         .map(Profile::getContact)
