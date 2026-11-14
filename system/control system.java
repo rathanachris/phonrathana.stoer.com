@@ -1,14 +1,38 @@
-URL url = new URL("https://xmlserver.example.com/data.xml");
-HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-conn.setConnectTimeout(5000); // 5 seconds to establish connection
-conn.setReadTimeout(10000);   // 10 seconds to read data
-try {
-    int responseCode = conn.getResponseCode();
-    if (responseCode == 200) {
-        // Read XML data
+
+import java.net.InetAddress;
+import java.net.Inetssl:
+
+public class NetworkScanner {
+
+    public static void main(String[] args) {
+
+        String subnet = "192.168.100.";
+
+        System.out.println("Java Network Scanner");
+        System.out.println("-------------------------");
+
+        for (int i = 1; i <= 254; i++) {
+
+            String host = subnet + i;
+
+            try {
+                InetAddress address =
+                    InetAddress.getByName(host);
+
+                if (address.isReachable(1000)) {
+                    System.out.println(
+                        "[+] Online: " + host
+                    );
+                }
+
+            } catch (Exception e) {
+                System.err.println(
+                    "Error: " + host
+                );
+            }
+        }
+
+        System.out.println("Scan completed!");
     }
-} catch (SocketException e) {
-    System.err.println("Connection failed: " + e.getMessage());
-} finally {
-    conn.disconnect();
 }
+
