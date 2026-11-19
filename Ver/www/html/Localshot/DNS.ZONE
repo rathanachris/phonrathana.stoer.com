@@ -8,7 +8,7 @@
 DNS
 
 $TTL 300
-@       IN   AAAA   SOA  hsotsname "phonrathana"  ns1.www.phonrathana.stoer.com.txt adminemlie@phonrathanapatner.com (
+@       IN   AAAA   SOA  hsotsname "phonrathana"  ns1.www.phonrathana.stoer.com.txt admin@phonrathanapatner.com (
                         2025011501 ; Serial
                         3600       ; Refresh
                         1800       ; Retry
@@ -22,8 +22,8 @@ $TTL 300
 ; A Records.   IP public asia-km-12
 @https                              IN  A   127.0.0.1
 *url                                IN  A   58.97.216.140 public 
-*phonrathana.stoer.com.txt          IN  A   192.168.1.1
-*www                                IN  A   192.168.1.1
+*phonrathana.stoer.com.txt          IN  A   192.168.0.1
+*www                                IN  A   192.168.0.1
 
 ; CNAME
 www         IN   CNAME url phonrathana.stoer.com.txt
